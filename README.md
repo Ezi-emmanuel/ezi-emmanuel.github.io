@@ -8,7 +8,7 @@
 |------|---------|
 | `index.html` | Home (Forty banner + tiles) |
 | `about.html` | About Me / CV-style sections |
-| `modules/index.html` | Module list (table — add a row per module) |
+| `modules/index.html` | Module hub (Forty tile grid like home — add a tile per module) |
 | `modules/module-template.html` | Blank module page — duplicate for each module |
 | `modules/module-example.html` | Example content (replace or remove) |
 | `assets/css/main.css` | Forty theme (imports Font Awesome) |
@@ -36,7 +36,7 @@ If the site looks unstyled, confirm `assets/css/main.css` is on the default bran
 ## Customising
 
 - Replace placeholder text in `about.html` and on each module page.
-- On `modules/index.html`, add a **table row** per module linking to your HTML file.
+- On `modules/index.html`, copy an existing **tile** (`<article>…</article>`) per module and set the link and text to your new HTML file.
 - Duplicate `modules/module-template.html`, rename it (e.g. `nlp.html`), update the `<title>` and `<h1>`, and add a row on `modules/index.html`.
 - Swap images in `images/` for your own (keep filenames or update `src` in `index.html` / `about.html`). Placeholder images were downloaded from [Picsum Photos](https://picsum.photos).
 
