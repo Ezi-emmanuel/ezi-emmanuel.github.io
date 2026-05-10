@@ -5,7 +5,7 @@
  *   1. Create the HTML page in /modules/
  *   2. Append { href: "your-page.html", label: "Official module title" } to MODULES below.
  *
- * Paths are computed automatically from site root vs /modules/.
+ * Works from site root, /modules/*.html, and nested paths like /modules/artefacts/*.html.
  */
 (function () {
   var UL_ID = "portfolio-menu-links";
@@ -15,17 +15,37 @@
     { href: "launch-into-computing.html", label: "Launch into Computing" },
   ];
 
-  function inModulesFolder() {
-    var p = (window.location.pathname || "").replace(/\\/g, "/");
-    return p.indexOf("/modules/") !== -1;
+  /**
+   * Path segments after `/modules/`, e.g. `["launch-into-computing.html"]` or
+   * `["artefacts", "lit-week6.html"]`.
+   */
+  function modulePathParts(pathname) {
+    var p = (pathname || "").replace(/\\/g, "/");
+    var marker = "/modules/";
+    var i = p.indexOf(marker);
+    if (i === -1) return null;
+    var after = p.slice(i + marker.length);
+    return after.split("/").filter(Boolean);
   }
 
   function buildMenu() {
     var ul = document.getElementById(UL_ID);
     if (!ul) return;
 
-    var root = inModulesFolder() ? "../" : "";
-    var modPrefix = inModulesFolder() ? "" : "modules/";
+    var p = (window.location.pathname || "").replace(/\\/g, "/");
+    var parts = modulePathParts(p);
+    var inModulesTree = parts !== null;
+
+    var root;
+    var moduleLinkPrefix;
+
+    if (!inModulesTree) {
+      root = "";
+      moduleLinkPrefix = "modules/";
+    } else {
+      root = "../".repeat(parts.length);
+      moduleLinkPrefix = parts.length > 1 ? "../".repeat(parts.length - 1) : "";
+    }
 
     ul.innerHTML = "";
 
@@ -41,7 +61,7 @@
     add(root + "index.html", "Home");
     add(root + "about.html", "About Me");
     MODULES.forEach(function (m) {
-      add(modPrefix + m.href, m.label);
+      add(moduleLinkPrefix + m.href, m.label);
     });
   }
 

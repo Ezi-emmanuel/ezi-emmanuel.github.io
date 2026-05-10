@@ -12,6 +12,8 @@
 | `modules/launch-into-computing.html` | Your current module portfolio page |
 | `modules/module-template.html` | Blank module page — duplicate for each new module |
 | `modules/module-example.html` | Example content (optional reference) |
+| `modules/artefacts/*.html` | One **detail page per artefact** (linked from the module table) |
+| `modules/artefacts/artefact-template.html` | Copy when you add a new artefact page |
 | `assets/css/main.css` | Forty theme (imports Font Awesome) |
 | `assets/css/portfolio.css` | Small overrides (skip link, tables) |
 | `assets/js/*.js` | Forty behaviour (menu, scroll, breakpoints) |
@@ -41,6 +43,7 @@ If the site looks unstyled, confirm `assets/css/main.css` is on the default bran
 - Replace placeholder text in `about.html` and on each module page.
 - On `modules/index.html`, copy an existing **tile** (`<article>…</article>`) per module and set the link and text to your new HTML file.
 - Duplicate `modules/module-template.html`, rename it (e.g. `nlp.html`), update the `<title>` and `<h1>`, add a tile on `modules/index.html`, and add an entry to the `MODULES` array in `assets/js/menu-drawer.js` so the new module appears in the slide-out **Menu**.
+- **Artefacts:** copy `modules/artefacts/artefact-template.html`, save as a new file in `modules/artefacts/`, fill in the content, then in the module’s **Artefacts** table use `<a href="artefacts/your-file.html">Visible title</a>` in the first column.
 - Swap images in `images/` for your own (keep filenames or update `src` in `index.html` / `about.html`). Placeholder images were downloaded from [Picsum Photos](https://picsum.photos).
 
 ## Academic integrity
