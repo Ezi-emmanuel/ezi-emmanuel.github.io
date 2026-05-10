@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--
+  Standalone drag-and-drop page builder for drafting HTML content.
+  Open this file in a browser (double-click or drag into Chrome/Edge).
+  Export → copy HTML/CSS → paste into a section of modules/your-page.html
+  (usually inside <div class="inner">...</div>).
+
+  Uses GrapesJS + blocks-basic (MIT) from CDN — needs internet to load scripts.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Visual HTML builder | E-Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/grapesjs@0.21.8/dist/css/grapes.min.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+      }
+      .topbar {
+        padding: 0.5rem 1rem;
+        background: #242943;
+        color: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+        align-items: center;
+        min-height: 48px;
+      }
+      .topbar strong {
+        white-space: nowrap;
+      }
+      .topbar .hint {
+        opacity: 0.9;
+        font-size: 0.9rem;
+        max-width: 42em;
+      }
+      .topbar code {
+        background: #383f6b;
+        padding: 0.1em 0.35em;
+        border-radius: 3px;
+        font-size: 0.85em;
+      }
+      .topbar a {
+        color: #9bf1ff;
+        margin-left: auto;
+      }
+      .topbar button {
+        cursor: pointer;
+        padding: 0.45rem 0.9rem;
+        border: none;
+        background: #9bf1ff;
+        color: #242943;
+        font-weight: 600;
+        border-radius: 4px;
+        font-size: 0.9rem;
+      }
+      .topbar button:hover {
+        filter: brightness(1.05);
+      }
+      #gjs {
+        height: calc(100vh - 48px);
+      }
+      #exportOverlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 100000;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      #exportOverlay.open {
+        display: flex;
+      }
+      #exportOverlay .panel {
+        background: #fff;
+        color: #222;
+        max-width: 920px;
+        width: 100%;
+        max-height: 88vh;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+      }
+      #exportOverlay h2 {
+        margin: 0;
+        padding: 0.75rem 1rem;
+        font-size: 1.1rem;
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+      }
+      #exportOverlay textarea {
+        flex: 1;
+        min-height: 220px;
+        font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+        font-size: 12px;
+        padding: 12px;
+        border: none;
+        resize: vertical;
+        line-height: 1.4;
+      }
+      #exportOverlay .actions {
+        padding: 0.75rem 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        border-top: 1px solid #ddd;
+        background: #fafafa;
+      }
+      #exportOverlay .actions button {
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        font-weight: 600;
+      }
+      #exportOverlay .actions button.primary {
+        background: #242943;
+        color: #fff;
+        border-color: #242943;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <strong>Drag-and-drop HTML builder</strong>
+      <span class="hint"
+        >Drag blocks from the right panel. Edit text by double-clicking. Export, then paste into your
+        portfolio HTML inside a <code>.inner</code> block (not a full Forty page replacement).</span
+      >
+      <button type="button" id="btnExport">Export HTML + CSS</button>
+      <a href="../index.html">← Portfolio home</a>
+    </div>
+    <div id="gjs"></div>
+
+    <div id="exportOverlay" role="dialog" aria-labelledby="exportTitle">
+      <div class="panel">
+        <h2 id="exportTitle">Exported code (copy into your page)</h2>
+        <textarea id="exportOut" readonly></textarea>
+        <div class="actions">
+          <button type="button" class="primary" id="btnCopy">Copy to clipboard</button>
+          <button type="button" id="btnDownload">Download as snippet.html</button>
+          <button type="button" id="btnClose">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/grapesjs@0.21.8"></script>
+    <script src="https://unpkg.com/grapesjs-blocks-basic@1.0.2/dist/index.js"></script>
+    <script>
+      (function () {
+        var basic = window["gjs-blocks-basic"];
+        var plugin =
+          basic && typeof basic.default === "function"
+            ? basic.default
+            : typeof basic === "function"
+              ? basic
+              : null;
+
+        var plugins = plugin ? [plugin] : [];
+
+        var editor = grapesjs.init({
+          container: "#gjs",
+          height: "100%",
+          width: "auto",
+          storageManager: false,
+          plugins: plugins,
+        });
+
+        // ---- Export ----
+        var overlay = document.getElementById("exportOverlay");
+        var out = document.getElementById("exportOut");
+
+        function buildExport() {
+          var html = editor.getHtml();
+          var css = editor.getCss();
+          return (
+            "<!-- Paste the <style> block once per page if needed, or merge rules into portfolio.css -->\n" +
+            "<style>\n" +
+            css +
+            "\n</style>\n\n" +
+            html
+          );
+        }
+
+        document.getElementById("btnExport").addEventListener("click", function () {
+          out.value = buildExport();
+          overlay.classList.add("open");
+        });
+
+        document.getElementById("btnClose").addEventListener("click", function () {
+          overlay.classList.remove("open");
+        });
+
+        overlay.addEventListener("click", function (e) {
+          if (e.target === overlay) overlay.classList.remove("open");
+        });
+
+        document.getElementById("btnCopy").addEventListener("click", function () {
+          out.select();
+          document.execCommand("copy");
+        });
+
+        document.getElementById("btnDownload").addEventListener("click", function () {
+          var blob = new Blob([out.value], { type: "text/html;charset=utf-8" });
+          var a = document.createElement("a");
+          a.href = URL.createObjectURL(blob);
+          a.download = "exported-snippet.html";
+          a.click();
+          URL.revokeObjectURL(a.href);
+        });
+      })();
+    </script>
+  </body>
+</html>

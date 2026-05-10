@@ -9,14 +9,16 @@
 | `index.html` | Home (Forty banner + tiles) |
 | `about.html` | About Me / CV-style sections |
 | `modules/index.html` | Module hub (Forty tile grid like home — add a tile per module) |
-| `modules/module-template.html` | Blank module page — duplicate for each module |
-| `modules/module-example.html` | Example content (replace or remove) |
+| `modules/launch-into-computing.html` | Your current module portfolio page |
+| `modules/module-template.html` | Blank module page — duplicate for each new module |
+| `modules/module-example.html` | Example content (optional reference) |
 | `assets/css/main.css` | Forty theme (imports Font Awesome) |
 | `assets/css/portfolio.css` | Small overrides (skip link, tables) |
 | `assets/js/*.js` | Forty behaviour (menu, scroll, breakpoints) |
 | `assets/webfonts/*.woff2` | Font Awesome webfonts (icons) |
 | `images/` | Banner and tile images (`banner.jpg`, `pic01.jpg`, …) — replace with your own if you prefer |
 | `artefacts/` | Optional PDFs or files linked from module pages |
+| `tools/visual-editor.html` | Optional **drag-and-drop** HTML builder (open in browser; needs internet for CDN) |
 
 Each module page includes: learning outcomes, artefacts (with feedback), reflection, meeting notes, and a professional skills matrix with an action plan.
 
