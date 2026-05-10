@@ -1,0 +1,45 @@
+# E-Portfolio — Eziuche Emmanuel
+
+**MSc Artificial Intelligence**, University of Essex — academic portfolio for GitHub **Pages** (static HTML, no build step). The visual design is **[Forty](https://html5up.net/forty)** by [HTML5 UP](https://html5up.net), used under the [CCA 3.0 licence](https://html5up.net/license). See `LICENSE.html5up-forty.txt` in this folder for the template licence text.
+
+## Site structure
+
+| Path | Purpose |
+|------|---------|
+| `index.html` | Home (Forty banner + tiles) |
+| `about.html` | About Me / CV-style sections |
+| `modules/index.html` | Module list (table — add a row per module) |
+| `modules/module-template.html` | Blank module page — duplicate for each module |
+| `modules/module-example.html` | Example content (replace or remove) |
+| `assets/css/main.css` | Forty theme (imports Font Awesome) |
+| `assets/css/portfolio.css` | Small overrides (skip link, tables) |
+| `assets/js/*.js` | Forty behaviour (menu, scroll, breakpoints) |
+| `assets/webfonts/*.woff2` | Font Awesome webfonts (icons) |
+| `images/` | Banner and tile images (`banner.jpg`, `pic01.jpg`, …) — replace with your own if you prefer |
+| `artefacts/` | Optional PDFs or files linked from module pages |
+
+Each module page includes: learning outcomes, artefacts (with feedback), reflection, meeting notes, and a professional skills matrix with an action plan.
+
+## Publish on GitHub Pages
+
+1. Create a new repository on GitHub and push this folder (or use “Upload files”).
+2. In the repository on GitHub: **Settings → Pages**.
+3. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+4. Choose branch **main** (or **master**) and folder **`/ (root)`**, then save.
+
+After a minute or two, your site will be available at:
+
+`https://<your-username>.github.io/<repository-name>/`
+
+If the site looks unstyled, confirm `assets/css/main.css` is on the default branch and the URL includes your repository name in the path.
+
+## Customising
+
+- Replace placeholder text in `about.html` and on each module page.
+- On `modules/index.html`, add a **table row** per module linking to your HTML file.
+- Duplicate `modules/module-template.html`, rename it (e.g. `nlp.html`), update the `<title>` and `<h1>`, and add a row on `modules/index.html`.
+- Swap images in `images/` for your own (keep filenames or update `src` in `index.html` / `about.html`). Placeholder images were downloaded from [Picsum Photos](https://picsum.photos).
+
+## Academic integrity
+
+Only publish artefacts, feedback, and meeting content you are **permitted** to share. When in doubt, ask your tutor or programme handbook.

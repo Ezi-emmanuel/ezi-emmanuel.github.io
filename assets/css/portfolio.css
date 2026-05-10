@@ -1,0 +1,31 @@
+/* Eziuche Emmanuel — small additions on Forty (HTML5 UP) */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100001;
+  padding: 0.65em 1.1em;
+  background: #fff;
+  color: #242943;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  left: 0.75rem;
+  top: 0.75rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.portfolio-note {
+  border-left: solid 4px #9bf1ff;
+  padding-left: 1.25em;
+  margin: 1.25em 0;
+  font-style: italic;
+}
