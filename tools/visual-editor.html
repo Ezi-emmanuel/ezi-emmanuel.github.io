@@ -11,7 +11,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Visual HTML builder | E-Portfolio</title>
+    <title>Visual HTML builder | Eziuche Emmanuel</title>
     <link rel="stylesheet" href="https://unpkg.com/grapesjs@0.21.8/dist/css/grapes.min.css" />
     <style>
       * {
@@ -30,6 +30,21 @@
         gap: 0.5rem 1rem;
         align-items: center;
         min-height: 48px;
+      }
+      .topbar-name {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+        line-height: 1.2;
+      }
+      .topbar-name strong {
+        white-space: nowrap;
+        font-size: 1.05rem;
+      }
+      .topbar-name span {
+        font-size: 0.8rem;
+        opacity: 0.88;
+        font-weight: 600;
       }
       .topbar strong {
         white-space: nowrap;
@@ -132,10 +147,14 @@
   </head>
   <body>
     <div class="topbar">
-      <strong>Drag-and-drop HTML builder</strong>
+      <div class="topbar-name">
+        <strong>Eziuche Emmanuel</strong>
+        <span>MSc AI · Essex</span>
+      </div>
       <span class="hint"
-        >Drag blocks from the right panel. Edit text by double-clicking. Export, then paste into your
-        portfolio HTML inside a <code>.inner</code> block (not a full Forty page replacement).</span
+        ><strong>Visual HTML builder</strong> — drag blocks from the right panel; double-click to edit
+        text. Export, then paste into your portfolio HTML inside a <code>.inner</code> block (not a full
+        Forty page replacement).</span
       >
       <button type="button" id="btnExport">Export HTML + CSS</button>
       <a href="../index.html">← Portfolio home</a>
