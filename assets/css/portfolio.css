@@ -61,12 +61,11 @@
   }
 }
 
-/* About Me: portrait left, heading + biography right (stacked on narrow screens) */
+/* About Me: fixed-width portrait column + text (Grid avoids flex min-width quirks) */
 .about-intro-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  align-items: start;
   gap: clamp(1.25em, 4vw, 2.75em);
   margin: 0 0 2.5em;
 }
@@ -74,11 +73,10 @@
 .about-intro-text > .about-me-heading {
   margin-top: 0;
   margin-bottom: 1em;
+  max-width: 100%;
 }
 
 .about-photo {
-  flex: 0 0 auto;
-  /* Half of previous 280px display width */
   max-width: 140px;
   width: 100%;
 }
@@ -91,8 +89,7 @@
 }
 
 .about-intro-text {
-  flex: 1 1 0;
-  min-width: min(16rem, 100%);
+  min-width: 0;
   max-width: 48em;
 }
 
@@ -106,12 +103,11 @@
 
 @media screen and (max-width: 736px) {
   .about-intro-row {
-    flex-direction: column;
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .about-intro-text {
-    flex: 1 1 auto;
-    min-width: 0;
-    width: 100%;
+  /* Keep portrait limited width when stacked — does not stretch full row */
+  .about-photo {
+    justify-self: start;
   }
 }
