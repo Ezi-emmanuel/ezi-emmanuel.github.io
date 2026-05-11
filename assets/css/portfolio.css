@@ -1,17 +1,25 @@
 /* Eziuche Emmanuel — small additions on Forty (HTML5 UP) */
 
-/* Home banner: one readable intro line as h1 (replaces giant title + uppercase .content p) */
+/* Home banner: intro h1 — !important overrides Forty #banner h1 (including max-width 736px) */
 #banner.major > .inner > header.major {
   width: 100%;
-  max-width: 42rem;
+  max-width: min(92vw, 56rem);
 }
 
-#banner.major header.major h1.banner-intro {
-  font-size: clamp(3.15rem, 8.25vw, 4.95rem);
+/* ~3× Forty’s banner h1 (~3.25rem); !important beats main.css #banner h1 (+ 736px breakpoint) */
+#banner.major > .inner > header.major h1.banner-intro {
+  font-size: clamp(4.75rem, 11vw, 9.75rem) !important;
   font-weight: 700;
-  line-height: 1.55;
+  line-height: 1.45;
   letter-spacing: 0.02em;
   text-transform: none;
+}
+
+@media screen and (max-width: 736px) {
+  /* Forty uses #banner h1 { font-size: 2em } here (~32px): scale ×3 */
+  #banner.major > .inner > header.major h1.banner-intro {
+    font-size: clamp(2.85rem, 11vw, 6rem) !important;
+  }
 }
 
 .skip-link {
