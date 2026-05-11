@@ -61,13 +61,18 @@
   }
 }
 
-/* About Me: smaller portrait, full-width caption directly underneath */
+/* About Me: portrait, then About Me caption, then biography */
 .about-intro-row {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.25em;
   margin: 0 0 2.5em;
+}
+
+.about-intro-row .about-me-under-photo {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .about-photo {
