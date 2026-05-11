@@ -37,18 +37,19 @@
   }
 }
 
-/* About Me: portrait left, intro text right */
+/* About Me: portrait then intro text below (no bold in intro — plain paragraph) */
 .about-intro-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 2em;
+  gap: 1.25em;
   margin: 0 0 2.5em;
 }
 
 .about-photo {
-  flex: 0 0 260px;
-  max-width: 100%;
+  flex: 0 0 auto;
+  max-width: 280px;
+  width: 100%;
 }
 
 .about-photo img {
@@ -59,21 +60,13 @@
 }
 
 .about-intro-text {
-  flex: 1 1 280px;
-  min-width: 0;
+  max-width: 48em;
+}
+
+.about-intro-text p {
+  font-weight: 400;
 }
 
 .about-intro-text p:first-child {
   margin-top: 0;
-}
-
-@media screen and (max-width: 736px) {
-  .about-intro-row {
-    flex-direction: column;
-  }
-
-  .about-photo {
-    flex: 0 0 auto;
-    max-width: 320px;
-  }
 }
