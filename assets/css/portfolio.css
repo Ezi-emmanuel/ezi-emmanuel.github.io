@@ -37,7 +37,7 @@
   }
 }
 
-/* About Me: portrait then intro text below (no bold in intro — plain paragraph) */
+/* About Me: smaller portrait, full-width caption directly underneath */
 .about-intro-row {
   display: flex;
   flex-direction: column;
@@ -48,7 +48,8 @@
 
 .about-photo {
   flex: 0 0 auto;
-  max-width: 280px;
+  /* Half of previous 280px display width */
+  max-width: 140px;
   width: 100%;
 }
 
@@ -60,6 +61,7 @@
 }
 
 .about-intro-text {
+  width: 100%;
   max-width: 48em;
 }
 
