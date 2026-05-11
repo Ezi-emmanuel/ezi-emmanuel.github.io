@@ -7,7 +7,7 @@
 }
 
 #banner.major header.major h1.banner-intro {
-  font-size: clamp(1.05rem, 2.75vw, 1.65rem);
+  font-size: clamp(3.15rem, 8.25vw, 4.95rem);
   font-weight: 700;
   line-height: 1.55;
   letter-spacing: 0.02em;
