@@ -70,10 +70,32 @@
   margin: 0 0 2.5em;
 }
 
-.about-intro-text > .about-me-heading {
-  margin-top: 0;
-  margin-bottom: 1em;
+/* About biography column — left-aligned block; underline matches column width */
+#main .about-intro-text {
+  text-align: left;
+  min-width: 0;
+  max-width: 48em;
+}
+
+#main .about-intro-text > header.major.about-me-heading {
+  width: 100%;
   max-width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+#main .about-intro-text > header.major.about-me-heading > h1 {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+/* Space after the rule, before first paragraph (Forty’s default header margin is too tall here) */
+#main .about-intro-text > header.major.about-me-heading + p {
+  margin-top: 0.75em;
 }
 
 .about-photo {
@@ -88,17 +110,8 @@
   display: block;
 }
 
-.about-intro-text {
-  min-width: 0;
-  max-width: 48em;
-}
-
 .about-intro-text p {
   font-weight: 400;
-}
-
-.about-intro-text .about-me-heading + p {
-  margin-top: 0;
 }
 
 @media screen and (max-width: 736px) {
