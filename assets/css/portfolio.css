@@ -61,13 +61,23 @@
   }
 }
 
-/* About Me: portrait, then About Me caption, then biography */
+/* About Me: portrait + caption beside biography (stacked on narrow screens) */
 .about-intro-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: clamp(1.25em, 4vw, 2.75em);
+  margin: 0 0 2.5em;
+}
+
+.about-intro-aside {
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.25em;
-  margin: 0 0 2.5em;
+  gap: 1em;
+  max-width: 100%;
 }
 
 .about-intro-row .about-me-under-photo {
@@ -90,7 +100,8 @@
 }
 
 .about-intro-text {
-  width: 100%;
+  flex: 1 1 0;
+  min-width: min(16rem, 100%);
   max-width: 48em;
 }
 
@@ -100,4 +111,16 @@
 
 .about-intro-text p:first-child {
   margin-top: 0;
+}
+
+@media screen and (max-width: 736px) {
+  .about-intro-row {
+    flex-direction: column;
+  }
+
+  .about-intro-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+  }
 }
