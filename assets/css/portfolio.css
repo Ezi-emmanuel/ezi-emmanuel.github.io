@@ -61,7 +61,7 @@
   }
 }
 
-/* About Me: portrait + caption beside biography (stacked on narrow screens) */
+/* About Me: portrait left, heading + biography right (stacked on narrow screens) */
 .about-intro-row {
   display: flex;
   flex-direction: row;
@@ -71,18 +71,9 @@
   margin: 0 0 2.5em;
 }
 
-.about-intro-aside {
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1em;
-  max-width: 100%;
-}
-
-.about-intro-row .about-me-under-photo {
+.about-intro-text > .about-me-heading {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 1em;
 }
 
 .about-photo {
@@ -109,7 +100,7 @@
   font-weight: 400;
 }
 
-.about-intro-text p:first-child {
+.about-intro-text .about-me-heading + p {
   margin-top: 0;
 }
 
