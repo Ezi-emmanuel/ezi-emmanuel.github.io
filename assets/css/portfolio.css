@@ -1,5 +1,19 @@
 /* Eziuche Emmanuel — small additions on Forty (HTML5 UP) */
 
+/* Home banner: one readable intro line as h1 (replaces giant title + uppercase .content p) */
+#banner.major > .inner > header.major {
+  width: 100%;
+  max-width: 42rem;
+}
+
+#banner.major header.major h1.banner-intro {
+  font-size: clamp(1.05rem, 2.75vw, 1.65rem);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
 .skip-link {
   position: absolute;
   left: -9999px;
