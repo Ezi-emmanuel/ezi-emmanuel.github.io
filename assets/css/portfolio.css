@@ -30,6 +30,16 @@
   font-style: italic;
 }
 
+/* Module page: note under title — same visual cue as .portfolio-note, not italic */
+.module-intro-note {
+  border-left: solid 4px #9bf1ff;
+  padding-left: 1.25em;
+  margin: 0 0 2em;
+  font-style: normal;
+  font-weight: 400;
+  max-width: 48em;
+}
+
 /* Single module tile: keep the block a reasonable width on large screens */
 @media screen and (min-width: 981px) {
   .tiles-one article {
