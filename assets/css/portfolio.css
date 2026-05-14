@@ -8,9 +8,9 @@
 
 /* ~3× Forty’s banner h1 (~3.25rem); !important beats main.css #banner h1 (+ 736px breakpoint) */
 #banner.major > .inner > header.major h1.banner-intro {
-  font-size: clamp(4.75rem, 11vw, 9.75rem) !important;
-  font-weight: 700;
-  line-height: 1.45;
+  font-size: clamp(2.75rem, 6vw, 3.75rem) !important;
+  font-weight: 300;
+  line-height: 0.45;
   letter-spacing: 0.02em;
   text-transform: none;
 }
