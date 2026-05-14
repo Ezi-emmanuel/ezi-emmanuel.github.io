@@ -113,10 +113,17 @@
             <p><strong>Boolean Expression:</strong> Y = FO · BR · BU</p>
 
             <h4>2. Circuit diagram</h4>
-            <p class="portfolio-note">
-              Add your circuit diagram image here when ready (export from your design tool and place the file under
-              <code>images/</code>, then insert an <code>&lt;img&gt;</code> tag in this page).
-            </p>
+            <figure class="circuit-diagram-figure">
+              <img
+                src="../../images/lit-unit-2-circuit-diagram.png"
+                alt="Logic diagram: three inputs (FO, BR, BU) feed a single AND gate; output Y drives engine ignition when all inputs are True."
+                loading="lazy"
+              />
+              <figcaption class="circuit-diagram-caption">
+                Three-input AND gate: engine start (Y) is True only when fob present (FO), brake pressed (BR), and
+                start button pressed (BU) are all True.
+              </figcaption>
+            </figure>
 
             <h4>3. Truth table</h4>
             <div class="table-wrapper">

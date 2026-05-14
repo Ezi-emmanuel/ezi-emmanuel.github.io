@@ -61,6 +61,28 @@
   }
 }
 
+/* Unit artefact pages: logic circuit diagram image */
+.circuit-diagram-figure {
+  margin: 1.25em 0 2em;
+  max-width: 100%;
+}
+
+.circuit-diagram-figure img {
+  display: block;
+  max-width: min(100%, 52rem);
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.circuit-diagram-caption {
+  margin-top: 0.75em;
+  font-size: 0.95em;
+  color: rgba(244, 244, 255, 0.75);
+  max-width: 48em;
+}
+
 .skip-link {
   position: absolute;
   left: -9999px;
