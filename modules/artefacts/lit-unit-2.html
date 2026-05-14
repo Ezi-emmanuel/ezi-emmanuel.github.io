@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!--
+  Forty by HTML5 UP — html5up.net | CCA 3.0
+  Launch into Computing — Unit 2 detail — Eziuche Emmanuel.
+-->
+<html lang="en">
+  <head>
+    <title>Unit 2 — Launch into Computing | Eziuche Emmanuel</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta
+      name="description"
+      content="Unit 2 — Boolean logic and push-to-start circuit design — Eziuche Emmanuel, MSc Artificial Intelligence, University of Essex."
+    />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../assets/css/portfolio.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+  </head>
+  <body class="is-preload">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="wrapper">
+      <header id="header">
+        <a href="../../index.html" class="logo"><strong>Eziuche Emmanuel</strong> <span>MSc in Artificial Intelligence at University of Essex</span></a>
+        <nav><a href="#menu">Menu</a></nav>
+      </header>
+
+      <nav id="menu">
+        <ul class="links" id="portfolio-menu-links"></ul>
+      </nav>
+
+      <div id="main" class="alt">
+        <section>
+          <div class="inner">
+            <header class="major">
+              <h1>Unit 2</h1>
+            </header>
+            <p class="portfolio-note">
+              Module: <a href="../launch-into-computing.html">Launch into Computing</a>
+            </p>
+
+            <h2>
+              How Boolean Principles Drive Modern Computing And Logic Circuit Design Of a Car Push-To-Start System
+            </h2>
+            <p>by <strong>Eziuche Emmanuel</strong> - Saturday, 9 May 2026, 12:55 PM</p>
+
+            <h3>TASK 1 — HOW BOOLEAN PRINCIPLES DRIVE MODERN COMPUTING</h3>
+            <p>
+              Boolean logic is the foundational mathematical system underpinning all modern computing. Named after the
+              mathematician George Boole, this system of logic operates on two distinct states: True (1) or False (0)
+              (Whitesitt, 2012). Despite its simplicity, Boolean logic provides the framework for manipulating binary
+              values, which is how electronic devices process and store data.
+            </p>
+
+            <h4>Boolean Logic In Hardware: Circuit Design And Real-World Applications</h4>
+            <p>
+              Computers are essentially vast collections of electronic switches called transistors. These transistors are
+              organized into logic gates, which are simple physical circuits that perform basic Boolean functions such as
+              AND, OR, and NOT on binary electrical inputs to produce a binary electrical output (Mano and Kime, 2008).
+            </p>
+            <ul>
+              <li>An AND gate outputs a signal (1) only if all its inputs are receiving a signal (1).</li>
+              <li>An OR gate outputs a signal (1) if at least one input is receiving a signal (1).</li>
+              <li>
+                A NOT gate inverts the input, outputting a signal (1) when there is no input (0) and vice versa.
+              </li>
+            </ul>
+            <p>
+              A practical, real-world application of this circuit design can be found in a modern car's push-to-start
+              ignition system. The engine will only ignite if the driver's foot is actively pressing the brake pedal
+              (Input A = True) AND the vehicle's sensors detect the wireless key fob inside the cabin (Input B = True).
+              These two electrical signals are fed into an AND gate within the car's circuitry. Only when both inputs are
+              True will the gate output a &quot;True&quot; signal (1), which completes the circuit and engages the
+              starter motor (Mano and Kime, 2008).
+            </p>
+
+            <h4>Boolean Logic in Software: Search Engines</h4>
+            <p>
+              In software and programming, Boolean logic is used to control execution flow and make decisions. A prime
+              real-world application of this is in search engines like Google or academic databases. When users input
+              queries, they are essentially creating a Boolean expression (Walton, 2024).
+            </p>
+            <p>
+              If a user searches for &quot;Artificial Intelligence&quot; AND &quot;Ethics&quot;, the search engine's
+              algorithm evaluates millions of webpages. It assigns a &quot;True&quot; value only to pages that contain
+              both terms. If a user searches for &quot;Artificial Intelligence&quot; NOT &quot;Robotics&quot;, the
+              engine filters out any results containing the second term.
+            </p>
+
+            <h4>Boolean Logic in Programming: Control Flow</h4>
+            <p>
+              In programming languages like Python or Java, Boolean data types are crucial for decision-making
+              structures. Conditional statements (like if-else blocks) rely on Boolean expressions to determine which
+              block of code to execute (Walton, 2024). For instance, a program might contain the logic: If the user is
+              logged in (True), then show the dashboard. If the condition evaluates to False, the program executes a
+              different set of instructions (like displaying an error screen).
+            </p>
+            <p>
+              In summary, Boolean logic is the bridge between human reasoning and machine execution. From the physical
+              architecture of microchips governing smart home alarms to the complex algorithms that organize the
+              internet, the simple binary choice of True or False remains the fundamental language of the digital age.
+            </p>
+
+            <h3>TASK 2 — LOGIC CIRCUIT DESIGN (Designing a car push-to-start circuit)</h3>
+
+            <h4>1. The Logic (3-Input Conjunction)</h4>
+            <p>For the engine to start, all three conditions must be True simultaneously.</p>
+            <ul>
+              <li><strong>Input FO:</strong> Fob Key Present (1 = Yes)</li>
+              <li><strong>Input BR:</strong> Brake Depressed (1 = Yes)</li>
+              <li><strong>Input BU:</strong> Button Pressed (1 = Yes)</li>
+              <li><strong>Output Y:</strong> Engine Ignition (1 = Start)</li>
+            </ul>
+            <p><strong>Boolean Expression:</strong> Y = FO · BR · BU</p>
+
+            <h4>2. Circuit diagram</h4>
+            <p class="portfolio-note">
+              Add your circuit diagram image here when ready (export from your design tool and place the file under
+              <code>images/</code>, then insert an <code>&lt;img&gt;</code> tag in this page).
+            </p>
+
+            <h4>3. Truth table</h4>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Fob Key (FO)</th>
+                    <th scope="col">Brake (BR)</th>
+                    <th scope="col">Button (BU)</th>
+                    <th scope="col">Engine Start (Y)</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>No key, no brake, no button</td>
+                  </tr>
+                  <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>Button pressed, but no key</td>
+                  </tr>
+                  <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>Brake pressed, but no key</td>
+                  </tr>
+                  <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>Brake &amp; Button, but no key</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>Key present, but no action</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>Key &amp; Button, but no brake</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>Key &amp; Brake, but no button</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>SUCCESS: Engine Starts</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h4>4. Reflective connection</h4>
+            <p>
+              The Car Push-to-Start Ignition Circuit is a basic control system designed to prioritize safety and
+              intentionality in vehicle operation. It utilizes a three-input conjunction (AND) logic gate to determine
+              if the specific conditions for engine ignition are met. The three primary inputs are the presence of the
+              electronic key fob (Input FO), the physical depression of the brake pedal (Input BR), and the user's
+              manual action of pressing the start button (Input BU).
+            </p>
+            <p>
+              Boolean logic is applied here through the principle of truth-functionality. In this system, the output
+              (Engine Start) is represented by the variable Y, and is governed by the Boolean expression Y = FO.BR.BU.
+              This means the output is only True (1) if and only if all three atomic propositions (the key is present,
+              the brake is down, and the button is pushed) are simultaneously True (Mosley and Baltazar, 2019). If any
+              single input is False (0), such as attempting to start the car without the key or without the brake
+              engaged, the AND gate will output 0, preventing the circuit from completing. This application
+              demonstrates how formal logic gates translate binary conditions into physical safety protocols, ensuring
+              the vehicle only engages under validated, human-centric circumstances (Walton, 2024).
+            </p>
+
+            <h3>References</h3>
+            <ul>
+              <li>
+                Mano, M.M. and Kime, C.R. (2008) <em>Logic and Computer Design Fundamentals</em>. 4th ed. Upper Saddle
+                River, NJ: Prentice Hall. Available at:
+                <a href="https://archive.org/details/logiccomputerdes0000mano">https://archive.org/details/logiccomputerdes0000mano</a>
+                (Accessed: 9 May 2026).
+              </li>
+              <li>
+                Mosley, A. and Baltazar, E. (2019) <em>An Introduction to Logic: From Everyday Life to Formal Systems</em>.
+                Northampton, MA: Smith College. Available at:
+                <a href="https://scholarworks.smith.edu/textbooks/1">https://scholarworks.smith.edu/textbooks/1</a>
+                (Accessed: 9 May 2026).
+              </li>
+              <li>
+                Walton, D.J. (2024) <em>Culturally Responsive Computing: An Introduction into Computer Science, Security,
+                and Technology</em>. Haverhill, MA: ROTEL. Available at:
+                <a href="https://rotel.pressbooks.pub/culturallyresponsivecomputing/">https://rotel.pressbooks.pub/culturallyresponsivecomputing/</a>
+                (Accessed: 9 May 2026).
+              </li>
+              <li>
+                Whitesitt, J.E. (2012) <em>Boolean Algebra and Its Applications</em>. Mineola, NY: Dover Publications.
+                Available at:
+                <a href="https://eclass.uoa.gr/modules/document/file.php/MATH104/2012-13/BooleanAlgebra.pdf">https://eclass.uoa.gr/modules/document/file.php/MATH104/2012-13/BooleanAlgebra.pdf</a>
+                (Accessed: 9 May 2026).
+              </li>
+            </ul>
+
+            <ul class="actions">
+              <li><a href="../launch-into-computing.html#artefacts" class="button primary">Back to Launch into Computing</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <footer id="footer">
+        <div class="inner">
+          <ul class="copyright">
+            <li>&copy; 2026 Eziuche Emmanuel</li>
+            <li>
+              Design: <a href="https://html5up.net/forty">Forty</a> by
+              <a href="https://html5up.net">HTML5 UP</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/menu-drawer.js"></script>
+  </body>
+</html>
