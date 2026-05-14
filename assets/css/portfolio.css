@@ -17,11 +17,21 @@
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
+  /* Fallback if line-level font-size is stripped */
   font-size: clamp(1.125rem, 3.25vw, 2.875rem) !important;
   font-weight: 700;
   line-height: 1.35 !important;
   letter-spacing: 0.02em;
   text-transform: none;
+}
+
+/* Desktop: explicit min-width so Forty #banner h1 { 3.25em } never reads as “unchanged” */
+@media screen and (min-width: 737px) {
+  html body #wrapper #banner.major > .inner > header.major.banner-header-intro > h1.banner-intro,
+  html body #wrapper #banner.major > .inner > header.major.banner-header-intro h1.banner-intro .banner-intro-line {
+    font-size: clamp(1.125rem, 3.25vw, 2.875rem) !important;
+    line-height: 1.38 !important;
+  }
 }
 
 #banner.major > .inner > header.major.banner-header-intro h1.banner-intro .banner-intro-line {
@@ -31,6 +41,7 @@
   margin: 0;
   padding: 0;
   line-height: 1.4 !important;
+  font-size: clamp(1.125rem, 3.25vw, 2.875rem) !important;
 }
 
 #banner.major > .inner > header.major.banner-header-intro h1.banner-intro .banner-intro-line:first-child {
@@ -39,7 +50,8 @@
 }
 
 @media screen and (max-width: 736px) {
-  #banner.major > .inner > header.major.banner-header-intro > h1.banner-intro {
+  html body #wrapper #banner.major > .inner > header.major.banner-header-intro > h1.banner-intro,
+  html body #wrapper #banner.major > .inner > header.major.banner-header-intro h1.banner-intro .banner-intro-line {
     font-size: clamp(0.75rem, 3vw, 1.375rem) !important;
     line-height: 1.42 !important;
   }
